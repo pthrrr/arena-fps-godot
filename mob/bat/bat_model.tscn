@@ -60,19 +60,19 @@ node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Idle", &"OneShot"
 script = ExtResource("2_vgr6s")
 
 [node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1565032427) index="0" unique_id=935444531]
-bones/0/position = Vector3(0, 0.023599997, 0)
-bones/1/rotation = Quaternion(0.19139042, -0.011708246, -0.6339937, 0.74918944)
-bones/2/rotation = Quaternion(0.17840986, 0.079184644, 0.39790034, 0.89642346)
-bones/3/rotation = Quaternion(0.13234447, 0.10274593, 0.36302224, 0.91659325)
-bones/4/rotation = Quaternion(0.19139042, 0.011708246, 0.6339937, 0.74918944)
-bones/5/rotation = Quaternion(0.17840986, -0.079184644, -0.39790034, 0.89642346)
-bones/6/rotation = Quaternion(0.13234447, -0.10274593, -0.36302224, 0.91659325)
+bones/0/position = Vector3(0, 0.016139623, 0)
+bones/1/rotation = Quaternion(0.09241511, 0.07013797, -0.6770921, 0.72669554)
+bones/2/rotation = Quaternion(0.11872882, 0.04455269, 0.34658343, 0.92940766)
+bones/3/rotation = Quaternion(0.16575065, 0.109993905, 0.33107492, 0.92239773)
+bones/4/rotation = Quaternion(0.09241511, -0.07013797, 0.6770921, 0.72669554)
+bones/5/rotation = Quaternion(0.11872882, -0.04455269, -0.34658343, 0.92940766)
+bones/6/rotation = Quaternion(0.16575065, -0.109993905, -0.33107492, 0.92239773)
 bones/7/position = Vector3(0.1309921, -0.22739176, -0.087851465)
 bones/7/rotation = Quaternion(0.26196837, 0.08345512, 0.26575127, 0.9240044)
-bones/8/rotation = Quaternion(3.967524e-08, 0.6496456, 0.7602373, 2.544948e-08)
+bones/8/rotation = Quaternion(3.678955e-08, 0.698677, 0.71543723, 2.2526493e-08)
 bones/10/position = Vector3(-0.1309921, -0.22739176, -0.087851465)
 bones/10/rotation = Quaternion(0.26196837, -0.083455116, -0.26575127, 0.9240044)
-bones/11/rotation = Quaternion(2.513148e-08, 0.6496456, 0.7602373, 3.2332505e-08)
+bones/11/rotation = Quaternion(2.258712e-08, 0.69867706, 0.7154372, 3.545271e-08)
 
 [node name="bat" parent="Armature/Skeleton3D" index="0" unique_id=448811487]
 surface_material_override/0 = ExtResource("2_030dj")

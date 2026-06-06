@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://cvpvpiga1nhj" path="res://level/bridge.tres" id="2_fc0e3"]
 [ext_resource type="Resource" uid="uid://ds24g87pr6rqr" path="res://player/player_1_controls.tres" id="4_fc0e3"]
 [ext_resource type="Resource" uid="uid://bfu4n55y5j8fl" path="res://player/player_2_controls.tres" id="5_7jktm"]
+[ext_resource type="PackedScene" uid="uid://cnebjo00yac68" path="res://mob/spawner/mob_spawner_3d.tscn" id="6_crycw"]
 
 [sub_resource type="Environment" id="Environment_80nbo"]
 background_mode = 1
@@ -58,3 +59,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1954403966]
 environment = SubResource("Environment_80nbo")
+
+[node name="MobSpawner3D" parent="." unique_id=2147029638 instance=ExtResource("6_crycw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
