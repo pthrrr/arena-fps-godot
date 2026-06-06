@@ -2,10 +2,7 @@ extends CharacterBody3D
 
 @export var controls: Resource = null
 
-var spawn_position: Vector3
-
 func _ready():
-	spawn_position = global_position
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
@@ -56,10 +53,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed(controls.shoot) and %Timer.is_stopped():
 		shoot_bullet()
-
-	if global_position.y < -35.0:
-		global_position = spawn_position
-		velocity = Vector3.ZERO
 
 	
 func shoot_bullet():
