@@ -2,8 +2,16 @@ extends Node2D
 
 var spawn_position_player: Vector3
 var spawn_position_player2: Vector3
+var countdown = 30
+var countdown_str = ""
 
 @onready var level = $HBoxContainer/SubViewportContainer/SubViewport/Level1
+@onready var timer_label = $TimerLabel
+@onready var round_timer = $RoundTimer
+@onready var green = $HBoxContainer/SubViewportContainer/SubViewport/Green
+@onready var green2 = $HBoxContainer/SubViewportContainer2/SubViewport/Green2
+@onready var label_win = $HBoxContainer/SubViewportContainer/SubViewport/Label_win
+@onready var label_win_2 = $HBoxContainer/SubViewportContainer2/SubViewport/Label_win2
 
 @onready var players := {
 	"1": {
@@ -16,7 +24,7 @@ var spawn_position_player2: Vector3
 		viewport = $"HBoxContainer/SubViewportContainer2/SubViewport",
 		camera = $"HBoxContainer/SubViewportContainer2/SubViewport/Camera3D",
 		player = $HBoxContainer/SubViewportContainer/SubViewport/Level1/Player2,
-		label = $"HBoxContainer/SubViewportContainer/SubViewport/Label2",
+		label = $"HBoxContainer/SubViewportContainer2/SubViewport/Label2",
 	}
 }
 
@@ -30,6 +38,14 @@ func _ready():
 		node.player.get_node("Camera3D").add_child(remote_transform)
 
 
+func _physics_process(delta):
+	countdown = int(round_timer.time_left)
+	countdown_str = str(countdown)
+	if countdown < 10:
+		countdown_str = "0" + str(countdown)
+	timer_label.text = "00:" + countdown_str
+	
+	
 func _on_kill_plane_body_entered(body):
 	if not body is CharacterBody3D:
 		return
@@ -42,3 +58,17 @@ func _on_kill_plane_body_entered(body):
 		players["2"].label.text = "Score: " + str(0)
 		level.player2_score = 0
 	body.velocity = Vector3.ZERO
+
+
+func _on_round_timer_timeout():
+	get_tree().paused = true
+	
+	if int(players["1"].label.text.lstrip("Score:")) == int(players["2"].label.text.lstrip("Score:")):
+		print("Draw")
+	elif int(players["1"].label.text.lstrip("Score:")) > int(players["2"].label.text.lstrip("Score:")):
+		green.visible = true
+		label_win.visible = true
+	elif int(players["1"].label.text.lstrip("Score:")) > int(players["2"].label.text.lstrip("Score:")):
+		green2.visible = true
+		label_win_2.visible = true
+	
