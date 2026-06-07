@@ -3,16 +3,20 @@ extends Node2D
 var spawn_position_player: Vector3
 var spawn_position_player2: Vector3
 
+@onready var level = $HBoxContainer/SubViewportContainer/SubViewport/Level1
+
 @onready var players := {
 	"1": {
 		viewport = $"HBoxContainer/SubViewportContainer/SubViewport",
 		camera = $"HBoxContainer/SubViewportContainer/SubViewport/Camera3D",
 		player = $HBoxContainer/SubViewportContainer/SubViewport/Level1/Player,
+		label = $"HBoxContainer/SubViewportContainer/SubViewport/Label",
 	},
 	"2": {
 		viewport = $"HBoxContainer/SubViewportContainer2/SubViewport",
 		camera = $"HBoxContainer/SubViewportContainer2/SubViewport/Camera3D",
 		player = $HBoxContainer/SubViewportContainer/SubViewport/Level1/Player2,
+		label = $"HBoxContainer/SubViewportContainer/SubViewport/Label2",
 	}
 }
 
@@ -29,9 +33,12 @@ func _ready():
 func _on_kill_plane_body_entered(body):
 	if not body is CharacterBody3D:
 		return
-	# get_tree().reload_current_scene.call_deferred()
 	if body.controls.player_index == 0:
 		body.global_position = spawn_position_player
+		players["1"].label.text = "Score: " + str(0)
+		level.player_score = 0
 	elif body.controls.player_index == 1:
 		body.global_position = spawn_position_player2
+		players["2"].label.text = "Score: " + str(0)
+		level.player2_score = 0
 	body.velocity = Vector3.ZERO
