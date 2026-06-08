@@ -26,6 +26,9 @@ script = ExtResource("1_i2041")
 [node name="MobSpawner3D" parent="." unique_id=2147029638 instance=ExtResource("6_crycw")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8, 0, -14)
 
+[node name="MobSpawner3D2" parent="." unique_id=1676755294 instance=ExtResource("6_crycw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16, 0, -14)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1550151885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -5, 0)
 use_collision = true
@@ -66,3 +69,4 @@ shadow_enabled = true
 environment = SubResource("Environment_80nbo")
 
 [connection signal="mob_spawned" from="MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spawned"]
+[connection signal="mob_spawned" from="MobSpawner3D2" to="." method="_on_mob_spawner_3d_mob_spawned"]
