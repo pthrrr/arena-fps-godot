@@ -4,6 +4,8 @@
 
 ![Split Screen Multiplayer](screenshots/splitscreen.png)
 
+![Single Player](screenshots/singleplayer.png)
+
 ## Features
 
 - Split screen local multiplayer (2 players)
