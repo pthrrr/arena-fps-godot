@@ -4,6 +4,8 @@
 
 ![Single Player](screenshots/singleplayer.png)
 
+![Split Screen Multiplayer](screenshots/splitscreen.png)
+
 ## Features
 
 - Keyboard + mouse controls
