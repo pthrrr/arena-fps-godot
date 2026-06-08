@@ -14,16 +14,28 @@ var killer_player_index = 0
 @onready var die_sound = %DieSound
 
 @onready var player = get_node("/root/Game/Level1/Player")
+@onready var raycast = $RayCast3D
 
 
+func _ready():
+	pass
+	
 func _physics_process(delta):
 	var direction_player = global_position.direction_to(player.global_position)
 	direction_player.y = 0.0
-	
+	raycast.target_position = direction_player * 8.0
+
+	if raycast.is_colliding():
+		var collision_point: Vector3 = raycast.get_collision_point()
+		var collision_normal: Vector3 = raycast.get_collision_normal()
+		var collider: Node3D = raycast.get_collider()
+		
+		if collider is CharacterBody3D:
+			pass
+			
 	var dist_p1 = global_position.distance_to(player.global_position)
 	linear_velocity = direction_player * speed
 	bat_model.global_rotation.y = Vector3.FORWARD.signed_angle_to(direction_player, Vector3.UP) + PI
-
 
 
 func take_damage(player_index):
