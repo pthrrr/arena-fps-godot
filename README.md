@@ -2,6 +2,8 @@
 
 3D arena shooter with split screen two-player mode. Based on [gdquest first_3d_game_godot4_arena_fps](https://www.gdquest.com/library/first_3d_game_godot4_arena_fps/).
 
+![Split Screen Multiplayer](screenshots/splitscreen.png)
+
 ## Features
 
 - Split screen local multiplayer (2 players)
