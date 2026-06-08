@@ -80,15 +80,6 @@ offset_bottom = 86.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_feb5d")
 
-[node name="Label_mob" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=2023741829]
-unique_name_in_owner = true
-offset_left = 750.0
-offset_top = 17.0
-offset_right = 939.0
-offset_bottom = 86.0
-text = "Mob: 0"
-label_settings = SubResource("LabelSettings_feb5d")
-
 [node name="Label_win" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=436631230]
 visible = false
 offset_left = 350.99994

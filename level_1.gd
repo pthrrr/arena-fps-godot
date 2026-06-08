@@ -8,8 +8,7 @@ const MAX_MOBS = 20
 
 @onready var label = %Label
 @onready var label_2 = %Label2
-@onready var label_mob: Label = %Label_mob
-@onready var label_mob_2: Label = %Label_mob2
+@onready var label_mob: Label = %Label_mob2
 @onready var spawner1 = $MobSpawner3D
 @onready var spawner2 = $MobSpawner3D2
 
@@ -19,9 +18,7 @@ func get_total_mobs() -> int:
 
 
 func update_mob_label():
-	var text = "Mob: " + str(mob_counter)
-	label_mob.text = text
-	label_mob_2.text = text
+	label_mob.text = "Mob: " + str(mob_counter)
 
 
 func increase_score(player_index):
