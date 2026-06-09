@@ -58,7 +58,7 @@ layout_mode = 2
 theme = SubResource("Theme_0hkt3")
 text = "Exit"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_button_pressed"]

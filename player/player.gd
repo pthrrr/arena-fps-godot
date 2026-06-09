@@ -15,7 +15,8 @@ func _unhandled_input(event):
 		)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+		get_tree().paused = true
+		$"../../MainScreen".visible = true
 		
 func _physics_process(delta):
 	const SPEED = 5.5

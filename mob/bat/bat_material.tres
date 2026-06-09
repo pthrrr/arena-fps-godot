@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bfdc0jv2ynlb1"]
 
-[ext_resource type="Texture2D" uid="uid://dfn42p1x0fwfn" path="res://mob/bat/bat_model_bat_palette.png" id="1_5napd"]
+[ext_resource type="Texture2D" uid="uid://b0cpeejv52of7" path="res://mob/bat/bat_model_bat_palette.png" id="1_5napd"]
 
 [resource]
 resource_local_to_scene = true
