@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dtntpqkfkocdm" path="res://level1.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://by1nxfid65g7a" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://daxau863en5sh" path="res://player/reticle.png" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://c6al1vm53hvib" path="res://main_screen.tscn" id="4_fc0e3"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_feb5d"]
 
@@ -170,6 +171,16 @@ offset_right = 944.0
 offset_bottom = 86.0
 text = "00:30"
 label_settings = SubResource("LabelSettings_fc0e3")
+
+[node name="MainScreen" parent="." unique_id=988874173 instance=ExtResource("4_fc0e3")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 4
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]

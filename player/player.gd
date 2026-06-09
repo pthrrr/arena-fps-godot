@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var controls: Resource = null
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 
 
 func _unhandled_input(event):
@@ -15,7 +15,11 @@ func _unhandled_input(event):
 		)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	
+		get_tree().paused = true
+		var main_screen = get_tree().current_scene.get_node("MainScreen")
+		main_screen.visible = true
+		main_screen.get_node("CenterContainer/VBoxContainer/ResumeButton").visible = true
+		main_screen.get_node("CenterContainer/VBoxContainer/StartButton").text = "Restart"
 		
 func _physics_process(delta):
 	const SPEED = 5.5

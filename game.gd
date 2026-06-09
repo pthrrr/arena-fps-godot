@@ -8,6 +8,9 @@ var countdown_str = ""
 @onready var level = $HBoxContainer/SubViewportContainer/SubViewport/Level1
 @onready var timer_label = $TimerLabel
 @onready var round_timer = $RoundTimer
+@onready var main_screen: Control = $MainScreen
+
+static var first_launch = true
 @onready var green = $HBoxContainer/SubViewportContainer/SubViewport/Green
 @onready var green2 = $HBoxContainer/SubViewportContainer2/SubViewport/Green2
 @onready var label_win = $HBoxContainer/SubViewportContainer/SubViewport/Label_win
@@ -29,6 +32,13 @@ var countdown_str = ""
 }
 
 func _ready():
+	if first_launch:
+		get_tree().paused = true
+		first_launch = false
+	else:
+		main_screen.visible = false
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	spawn_position_player = players["1"].player.global_position
 	spawn_position_player2 = players["2"].player.global_position
 	players["2"].viewport.world_3d = players["1"].viewport.world_3d
@@ -62,6 +72,10 @@ func _on_kill_plane_body_entered(body):
 
 func _on_round_timer_timeout():
 	get_tree().paused = true
+	main_screen.visible = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$MainScreen/CenterContainer/VBoxContainer/ResumeButton.visible = false
+	$MainScreen/CenterContainer/VBoxContainer/StartButton.text = "Restart"
 	
 	if int(players["1"].label.text.lstrip("Score:")) == int(players["2"].label.text.lstrip("Score:")):
 		print("Draw")
