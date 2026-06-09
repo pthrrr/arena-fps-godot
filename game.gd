@@ -7,8 +7,8 @@ var countdown_str = ""
 @onready var level: Node3D = $Level1
 @onready var timer_label: Label = $TimerLabel
 @onready var round_timer = $RoundTimer
-@onready var green: ColorRect = $Green
-@onready var label_win: Label = $CenterContainer/Label_win
+@onready var main_screen: Control = $MainScreen
+
 
 @onready var players := {
 	"1": {
@@ -46,5 +46,7 @@ func _on_kill_plane_body_entered(body):
 
 func _on_round_timer_timeout():
 	get_tree().paused = true
-	green.visible = true
-	label_win.visible = true
+	#green.visible = true
+	#label_win.visible = true
+	main_screen.visible = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

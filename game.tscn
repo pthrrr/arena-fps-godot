@@ -2,15 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dtntpqkfkocdm" path="res://level1.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://by1nxfid65g7a" path="res://game.gd" id="1_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://daxau863en5sh" path="res://player/reticle.png" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://b0a6dli7aqldq" path="res://player/reticle.png" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://c6al1vm53hvib" path="res://main_screen.tscn" id="4_fc0e3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fc0e3"]
 font_size = 50
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_7jktm"]
-font_size = 100
 
 [sub_resource type="LabelSettings" id="LabelSettings_feb5d"]
 font_size = 50
@@ -26,17 +24,6 @@ script = ExtResource("1_e2o6t")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=59716745]
 current = true
-
-[node name="Green" type="ColorRect" parent="." unique_id=1895628859]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.654902, 0.3019608, 0.627451)
 
 [node name="TimerLabel" type="Label" parent="." unique_id=859458631]
 anchors_preset = 5
@@ -58,12 +45,6 @@ custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
 texture = ExtResource("3_feb5d")
 expand_mode = 1
-
-[node name="Label_win" type="Label" parent="CenterContainer" unique_id=436631230]
-visible = false
-layout_mode = 2
-text = "WIN"
-label_settings = SubResource("LabelSettings_7jktm")
 
 [node name="Label" type="Label" parent="." unique_id=130372609]
 unique_name_in_owner = true
@@ -93,6 +74,17 @@ shape = SubResource("WorldBoundaryShape3D_feb5d")
 wait_time = 30.0
 one_shot = true
 autostart = true
+
+[node name="MainScreen" parent="." unique_id=988874173 instance=ExtResource("4_fc0e3")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 4
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
