@@ -87,6 +87,7 @@ Key locations in the existing codebase to be aware of:
 - [ ] Spawner spawn rate increases with wave number (more creatures per wave)
 - [ ] Spawner circular hovering movement (already implemented)
 - [ ] Spawner collision (already implemented)
+- [ ] Add raycast to spawner and make it always look at the player
 
 ## UI / HUD
 
