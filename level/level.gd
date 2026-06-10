@@ -7,8 +7,8 @@ const MAX_MOBS = 20
 
 @onready var score_counter_label = %ScoreCounterLabel
 @onready var label_mob: Label = %Label_mob
-@onready var spawner1 = $MobSpawner3D
-@onready var spawner2 = $MobSpawner3D2
+@onready var spawner1 = $MobSpawner1
+@onready var spawner2 = $MobSpawner2
 @export var max_mobs: int = 20
 
 
