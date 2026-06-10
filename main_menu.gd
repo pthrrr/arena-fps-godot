@@ -4,7 +4,8 @@ extends Control
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		if visible:
-			get_tree().quit()
+			#get_tree().quit()
+			pass
 
 
 func _on_start_button_pressed() -> void:
@@ -22,3 +23,11 @@ func _on_resume_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_button_focus_entered() -> void:
+	$ConfirmSound.play()
+
+
+func _on_button_mouse_entered() -> void:
+	$FocusSound.play()
