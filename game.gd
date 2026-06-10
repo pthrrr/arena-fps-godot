@@ -63,3 +63,5 @@ func _on_round_timer_timeout():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$MainMenu/CenterContainer/VBoxContainer/ResumeButton.visible = false
 	$MainMenu/CenterContainer/VBoxContainer/StartButton.text = "Restart"
+	%MainMusic.stop()
+	%MenuMusic.play()

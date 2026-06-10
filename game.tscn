@@ -91,11 +91,13 @@ size_flags_horizontal = 4
 unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("5_ryrav")
+volume_db = 15.0
 
 [node name="MenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=1676292388]
 unique_name_in_owner = true
 process_mode = 3
 stream = ExtResource("6_eow3j")
+volume_db = 15.0
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
