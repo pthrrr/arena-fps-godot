@@ -24,9 +24,13 @@ func _ready():
 	if first_launch:
 		get_tree().paused = true
 		first_launch = false
+		%MainMusic.stop()
+		%MenuMusic.play()
 	else:
 		main_menu.visible = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		%MenuMusic.stop()
+		%MainMusic.play()
 		
 	spawn_position_player = players["1"].player.global_position
 	for node in players.values():

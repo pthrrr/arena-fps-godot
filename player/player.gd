@@ -19,6 +19,8 @@ func _unhandled_input(event):
 		$"../../MainMenu".visible = true
 		$"../../MainMenu/CenterContainer/VBoxContainer/ResumeButton".visible = true
 		$"../../MainMenu/CenterContainer/VBoxContainer/StartButton".text = "Restart"
+		$"../../MainMusic".stop()
+		$"../../MenuMusic".play()
 		
 func _physics_process(delta):
 	const SPEED = 5.5
