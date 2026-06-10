@@ -38,7 +38,6 @@ You fall.
 ## Branches
 
 - `main` — single player mode (this branch)
-- `feature/wave-system` — active development branch
 - `two_player_split_screen` — split screen local multiplayer
 - `gh-pages` — web deployment
 
@@ -49,3 +48,7 @@ You fall.
 ## Credits
 
 Originally based on [GDQuest's first 3D game tutorial](https://www.gdquest.com/library/first_3d_game_godot4_arena_fps/). Game assets (3D models, textures) by [GDQuest](https://www.gdquest.com/), licensed under [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+## Disclaimer
+
+This project was developed with the assistance of AI (Claude). AI was used for code guidance, documentation, git operations, and project planning. All game implementation and creative decisions were made by the developer.
