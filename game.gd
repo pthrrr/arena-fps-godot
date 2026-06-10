@@ -35,9 +35,13 @@ func _ready():
 	if first_launch:
 		get_tree().paused = true
 		first_launch = false
+		%MainMusic.stop()
+		%MenuMusic.play()
 	else:
 		main_screen.visible = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		%MenuMusic.stop()
+		%MainMusic.play()
 	
 	spawn_position_player = players["1"].player.global_position
 	spawn_position_player2 = players["2"].player.global_position
@@ -76,6 +80,8 @@ func _on_round_timer_timeout():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$MainScreen/CenterContainer/VBoxContainer/ResumeButton.visible = false
 	$MainScreen/CenterContainer/VBoxContainer/StartButton.text = "Restart"
+	%MainMusic.stop()
+	%MenuMusic.play()
 	
 	if int(players["1"].label.text.lstrip("Score:")) == int(players["2"].label.text.lstrip("Score:")):
 		print("Draw")

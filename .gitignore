@@ -2,4 +2,7 @@
 .godot/
 /android/
 
+# Agent instructions
+agent.md
+
 

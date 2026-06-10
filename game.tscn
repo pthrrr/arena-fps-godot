@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://by1nxfid65g7a" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://daxau863en5sh" path="res://player/reticle.png" id="3_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c6al1vm53hvib" path="res://main_screen.tscn" id="4_fc0e3"]
+[ext_resource type="AudioStream" uid="uid://bxm2v2hj3ou6u" path="res://sounds/main_music.mp3" id="5_ryrav"]
+[ext_resource type="AudioStream" uid="uid://ciqbchbmjyrw0" path="res://sounds/menu_music.mp3" id="6_eow3j"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_feb5d"]
 
@@ -169,7 +171,7 @@ offset_left = 804.0
 offset_top = 17.0
 offset_right = 944.0
 offset_bottom = 86.0
-text = "00:30"
+text = "00:45"
 label_settings = SubResource("LabelSettings_fc0e3")
 
 [node name="MainScreen" parent="." unique_id=988874173 instance=ExtResource("4_fc0e3")]
@@ -181,6 +183,18 @@ offset_bottom = 1080.0
 grow_horizontal = 1
 grow_vertical = 1
 size_flags_horizontal = 4
+
+[node name="MainMusic" type="AudioStreamPlayer2D" parent="." unique_id=411202859]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("5_ryrav")
+volume_db = 15.0
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=1676292388]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("6_eow3j")
+volume_db = 15.0
 
 [connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]

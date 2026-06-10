@@ -20,6 +20,8 @@ func _unhandled_input(event):
 		main_screen.visible = true
 		main_screen.get_node("CenterContainer/VBoxContainer/ResumeButton").visible = true
 		main_screen.get_node("CenterContainer/VBoxContainer/StartButton").text = "Restart"
+		get_tree().current_scene.get_node("MainMusic").stop()
+		get_tree().current_scene.get_node("MenuMusic").play()
 		
 func _physics_process(delta):
 	const SPEED = 5.5
@@ -73,4 +75,4 @@ func shoot_bullet():
 	new_bullet.global_transform = %Marker3D.global_transform
 	
 	%Timer.start()
-	%AudioStreamPlayer.play()
+	%GunShot.play()

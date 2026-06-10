@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ci3wn233f7d7k"]
 
-[ext_resource type="PackedScene" uid="uid://787v86nk511y" path="res://mob/spawner/spawner_model.glb" id="1_bk78j"]
+[ext_resource type="PackedScene" uid="uid://cibqwkjxhs7ys" path="res://mob/spawner/spawner_model.glb" id="1_bk78j"]
 [ext_resource type="Shader" uid="uid://cfnwyva3u4qeb" path="res://mob/spawner/spawner_halo.gdshader" id="2_lvlhh"]
 [ext_resource type="Material" uid="uid://bh1ego7bi1olb" path="res://mob/spawner/spawner_screen_material.tres" id="3_p6j4b"]
+[ext_resource type="AudioStream" uid="uid://dfn042sxhoxc6" path="res://sounds/spawner.mp3" id="4_lvlhh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rug3p"]
 render_priority = 0
@@ -61,17 +62,21 @@ _data = {
 
 [node name="spawner_model" unique_id=519373648 instance=ExtResource("1_bk78j")]
 
-[node name="halo" parent="." index="0" unique_id=1473218761]
+[node name="halo" parent="." index="0" unique_id=1829114548]
 surface_material_override/0 = SubResource("ShaderMaterial_rug3p")
 
-[node name="Body" parent="." index="1" unique_id=835365912]
+[node name="Body" parent="." index="1" unique_id=572741487]
 surface_material_override/0 = SubResource("StandardMaterial3D_2xi82")
 surface_material_override/1 = ExtResource("3_p6j4b")
 
-[node name="Top" parent="." index="2" unique_id=733860143]
+[node name="Top" parent="." index="2" unique_id=225420345]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0.78395706, 0)
 material_override = SubResource("StandardMaterial3D_yhm21")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3" unique_id=1410413886]
 libraries/ = SubResource("AnimationLibrary_tsddh")
 autoplay = &"rotation"
+
+[node name="DroneSound" type="AudioStreamPlayer3D" parent="." index="4" unique_id=489393569]
+stream = ExtResource("4_lvlhh")
+autoplay = true
