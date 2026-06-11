@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var controls: Resource = null
+@onready var game: Node2D = $"../.."
 
 var knockback_velocity = Vector3.ZERO
 
@@ -22,6 +23,7 @@ func _unhandled_input(event):
 		$"../../MainMenu".visible = true
 		$"../../MainMenu/CenterContainer/VBoxContainer/ResumeButton".visible = true
 		$"../../MainMenu/CenterContainer/VBoxContainer/StartButton".text = "Restart"
+		game.music_position = $"../../MainMusic".get_playback_position()
 		$"../../MainMusic".stop()
 		$"../../MenuMusic".play()
 		

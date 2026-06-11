@@ -1,5 +1,7 @@
 extends Node2D
 
+static var music_position = 0.0
+
 var spawn_position_player: Vector3
 var countdown = 30
 var countdown_str = ""
@@ -32,6 +34,7 @@ func _ready():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		%MenuMusic.stop()
 		%MainMusic.play()
+
 		
 	spawn_position_player = players["1"].player.global_position
 	for node in players.values():
@@ -71,3 +74,4 @@ func _on_round_timer_timeout():
 	$MainMenu/CenterContainer/VBoxContainer/StartButton.text = "Restart"
 	%MainMusic.stop()
 	%MenuMusic.play()
+	

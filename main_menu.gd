@@ -18,7 +18,8 @@ func _on_resume_button_pressed() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
 	%MenuMusic.stop()
-	%MainMusic.play()
+	var game = get_tree().current_scene
+	%MainMusic.play(game.music_position)
 
 
 func _on_exit_button_pressed() -> void:
@@ -27,3 +28,4 @@ func _on_exit_button_pressed() -> void:
 
 func _on_button_mouse_entered() -> void:
 	$FocusSound.play()
+	
