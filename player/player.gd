@@ -21,6 +21,7 @@ func _unhandled_input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		$"../../MainMenu".visible = true
+		$"../../MainMenu/CenterContainer/VBoxContainer/ResumeButton".grab_focus()
 		$"../../MainMenu/CenterContainer/VBoxContainer/ResumeButton".visible = true
 		$"../../MainMenu/CenterContainer/VBoxContainer/StartButton".text = "Restart"
 		game.music_position = $"../../MainMusic".get_playback_position()
