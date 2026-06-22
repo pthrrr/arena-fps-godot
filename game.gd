@@ -77,6 +77,7 @@ func _on_kill_plane_body_entered(body):
 func _on_round_timer_timeout():
 	get_tree().paused = true
 	main_screen.visible = true
+	main_screen.get_node("CenterContainer/VBoxContainer/StartButton").grab_focus()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$MainScreen/CenterContainer/VBoxContainer/ResumeButton.visible = false
 	$MainScreen/CenterContainer/VBoxContainer/StartButton.text = "Restart"
